@@ -10,9 +10,6 @@ RUN npm install
 # Copy the source code
 COPY . .
 
-# Install dev dependencies for testing
-RUN npm install --only=dev
-
 # Expose the port
 EXPOSE 3000
 
