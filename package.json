@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Starter express web server template",
   "main": "index.js",
-  "type": "module",  // Add this line
+  "type": "module",  
   "scripts": {
     "start": "node index.js",
-    "test": "mocha test/**/*.test.js"  // Ensure your test files use .js
+    "test": "mocha test/**/*.test.js"  
   },
   "keywords": [
     "node",
