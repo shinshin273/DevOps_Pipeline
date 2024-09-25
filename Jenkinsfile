@@ -40,7 +40,6 @@ pipeline {
 
                     withSonarQubeEnv('SonarCloud') {  // 'SonarCloud' is the name of your SonarQube installation in Jenkins
                         bat "${scannerHome}/bin/sonar-scanner"
-
                     }
                 }
             }
