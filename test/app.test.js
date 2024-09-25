@@ -1,6 +1,6 @@
-import { expect } from 'chai'; 
-import request from 'supertest'; 
-import app from '../index.js'; 
+const request = require('supertest'); 
+const { expect } = require('chai');
+const app = require('../index'); 
 
 describe('GET /', () => {
   it('should return 200 OK', async () => {
