@@ -4,6 +4,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building the code using Maven"
+                bat 'docker build -t icecream_website .'
             }
         }
         
@@ -39,6 +40,7 @@ pipeline {
 
                     withSonarQubeEnv('SonarCloud') {  // 'SonarCloud' is the name of your SonarQube installation in Jenkins
                         bat "${scannerHome}/bin/sonar-scanner"
+
                     }
                 }
             }
