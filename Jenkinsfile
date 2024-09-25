@@ -4,6 +4,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building the code using Maven"
+                bat 'docker build -t icecream_website .'
             }
         }
         
