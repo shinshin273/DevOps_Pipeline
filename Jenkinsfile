@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Running unit tests with JUnit and integration tests with Selenium"
                 bat 'npm install'
-                bat 'docker run --rm icecream_website npm test'
+                bat 'npm run test'
             }
             post {
                 success {
