@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Starter express web server template",
   "main": "index.js",
-  "type": "module", // This enables ES Module syntax
+  "type": "module", 
   "scripts": {
     "start": "node index.js",
     "test": "mocha test/**/*.test.js"
