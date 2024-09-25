@@ -10,8 +10,11 @@ RUN npm install
 # Copy the source code
 COPY . .
 
+# Install dev dependencies for testing
+RUN npm install --only=dev
+
 # Expose the port
 EXPOSE 3000
 
-# Start the app
+# Default command to start the app
 CMD ["npm", "start"]
