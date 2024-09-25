@@ -17,7 +17,7 @@ describe('Ice Cream Website', () => {
 
     it('should serve static files', (done) => {
         chai.request(app)
-            .get('/some_static_file.png') // Adjust to match a real static file in your `public_html`
+            .get('/icecream1.png') // Replace with a real file in your `public_html`
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 done();
