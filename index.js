@@ -8,10 +8,10 @@ const port = process.env.PORT || 3000; // Use environment variable PORT or defau
 // Tell our application to serve all the files under the `public_html` directory
 app.use(express.static('public_html'));
 
-// Check if this module is the main module being run
-if (require.main === module) {
+// Check if this module is the main module being run using ES module syntax
+if (import.meta.url === `file://${process.cwd()}/index.js`) {
   // Only start the server if this file is executed directly
-  const server = app.listen(port, () => {
+  app.listen(port, () => {
     console.log(`Web server running at: http://localhost:${port}`);
     console.log(`Type Ctrl+C to shut down the web server`);
   });
