@@ -11,6 +11,8 @@ pipeline {
         stage("Unit and Integration Tests") {
             steps {
                 echo "Running unit tests with JUnit and integration tests with Selenium"
+                bat 'docker run --rm icecream_website mvn test'
+                bat 'docker run --rm icecream_website mvn verify'
             }
             post {
                 success {
