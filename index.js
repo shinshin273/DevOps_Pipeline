@@ -1,21 +1,15 @@
-// Import the express web application framework
-import express from 'express';
+// Require the express web application framework 
+const express = require('express')
 
 // Create a new web application by calling the express function
-const app = express();
-const port = process.env.PORT || 3000; // Use environment variable PORT or default to 3000
+const app = express()
+const port = 3000
 
 // Tell our application to serve all the files under the `public_html` directory
-app.use(express.static('public_html'));
+app.use(express.static('public_html'))
 
-// Check if this module is the main module being run using ES module syntax
-if (import.meta.url === `file://${process.cwd()}/index.js`) {
-  // Only start the server if this file is executed directly
-  app.listen(port, () => {
-    console.log(`Web server running at: http://localhost:${port}`);
-    console.log(`Type Ctrl+C to shut down the web server`);
-  });
-}
-
-// Export the app for testing
-export default app;
+// Tell our application to listen to requests at port 3000 on the localhost
+app.listen(port, () => {
+  console.log(`Web server running at: http://localhost:${port}`)
+  console.log(`Type Ctrl+C to shut down the web server`)
+})
