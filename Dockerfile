@@ -13,5 +13,5 @@ COPY . .
 # Expose the port
 EXPOSE 3000
 
-# Default command to start the app
+# Start the app
 CMD ["npm", "start"]
