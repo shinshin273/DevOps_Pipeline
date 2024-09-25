@@ -8,9 +8,9 @@ pipeline {
             }
         }
         
-        stage("Unit and Integration Tests") {
+        stage("Tests") {
             steps {
-                echo "Running unit tests with JUnit and integration tests with Selenium"
+                echo "Running Mocha Test"
                 bat 'npm install'
                 bat 'npm run test'
             }
@@ -18,16 +18,16 @@ pipeline {
                 success {
                     emailext (
                         to: "hongthamnguyen2703@gmail.com",
-                        subject: "Unit and Integration Tests Stage Success",
-                        body: "The Unit and Integration Tests stage has completed successfully!",
+                        subject: "Mocha Test Stage Success",
+                        body: "The Mocha Test stage has completed successfully!",
                         attachLog: true
                     )
                 }
                 failure {
                     emailext (
                         to: "hongthamnguyen2703@gmail.com",
-                        subject: "Unit and Integration Tests Stage Failure",
-                        body: "The Unit and Integration Tests stage has failed!",
+                        subject: "Mocha Test Stage Failure",
+                        body: "The Mocha Test stage has failed!",
                         attachLog: true
                     )
                 }
