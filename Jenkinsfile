@@ -35,6 +35,13 @@ pipeline {
         stage("Code Analysis") {
             steps {
                 echo "Analyzing code quality with SonarQube"
+                script {
+                    def scannerHome = tool 'SonarScanner' // Use 'SonarScanner'
+
+                    withSonarQubeEnv('SonarCloud') {  // 'SonarCloud' is the name of your SonarQube installation in Jenkins
+                        bat "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
             }
         }
 
