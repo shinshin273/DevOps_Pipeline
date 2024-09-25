@@ -3,20 +3,11 @@
   "version": "1.0.0",
   "description": "Starter express web server template",
   "main": "index.js",
-  "type": "module",  
+  "type": "module",  // This line is essential
   "scripts": {
     "start": "node index.js",
-    "test": "mocha test/**/*.test.js"  
+    "test": "mocha --loader esm test/**/*.test.js"
   },
-  "keywords": [
-    "node",
-    "web",
-    "server",
-    "template",
-    "sit774"
-  ],
-  "author": "SIT774",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.18.3"
   },
